@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to Leonard Hall!</h1>
+<head>
+    <style>
+    body {
+    background-color: #88b6f7;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    }
+
+    h1 {
+    text-align: center;
+    color: white
+    }
+
+    img {
+    max-width:50%;
+    position: relative;
+    left: 25%
+    }
+
+    #menu {
+    background-color: #1b998b;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    }
+
+    #menu:hover{
+
+        background-color: #138275;
+
+    }
+
+    #image{
+
+        border: 2px solid white;
+        border-radius: 20px;
+
+    }
+
+    </style>
+</head>
+
+<body>
+<div><img src="/static/Lenn.jpg" id = "image"></div>
+<div>
+     <a style="text-decoration:none;position:absolute;top:5px;right:5px" href="https://dining.queensu.ca/wp-content/uploads/2017/11/LeoP3W5.htm">
+          <button id="menu">Check Menu</button>
+     </a>
+</div>
+</body>
+{% endblock %}

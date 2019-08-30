@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    #bg {
+        height:100%;
+        width:100%;
+        left:0px;
+        top:0px;
+        position:absolute;
+        z-index:-1;
+    }
+
+    #checkIn{
+        display:inline-block;
+        text-decoration:none;
+        background-color: #1b998b;
+        color: white;
+        padding: 16px;
+        font-size: 150px;
+        border: 1px solid white;
+        text-align: center;
+        border-radius: 75px;
+        padding: 40px 10px;
+        align: center;
+        margin-top: 100px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, .5);
+    }
+
+    #checkIn:hover{
+        background-color: #138275;
+        box-shadow: 4px 8px 16px rgba(0, 0, 0, .5);
+        cursor: pointer;
+    }
+
+    body{
+        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    }
+</style>
+
+<script>
+var pos = {
+    lat:0,
+    lng: 0
+}
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+        };
+        console.log(pos)
+        var baseurl = "{{ url_for('map') }}"
+        document.getElementById("checkIn").href=baseurl+"/"+pos.lat+"/"+pos.lng
+    }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+    });
+} else {
+    handleLocationError(false, infoWindow, map.getCenter());
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
+</script>
+<img id="bg" src="{{url_for('static',filename='background.jpg')}}">
+<a id="checkIn"  href="#">Check In</a>
+{% endblock %}
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
