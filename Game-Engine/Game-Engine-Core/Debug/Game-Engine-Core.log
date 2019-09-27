@@ -1,0 +1,2 @@
+﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Game-Engine-Core.vcxproj -> C:\Users\Sam\Documents\GitHub\Side-Projects\Game-Engine\Debug\Game-Engine-Core.exe
