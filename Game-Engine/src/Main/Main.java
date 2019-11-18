@@ -1,8 +1,6 @@
 package Main;
 
-import engine.graphics.Mesh;
-import engine.graphics.Renderer;
-import engine.graphics.Vertex;
+import engine.graphics.*;
 import engine.io.Window;
 
 public class Main implements Runnable{
@@ -12,17 +10,16 @@ public class Main implements Runnable{
     private final int WIDTH = 1280, HEIGHT=760;
     private final String TITLE = "Game";
     private Renderer renderer;
+    private ShaderProgram shader;
 
     private Vertex[] vertices = new Vertex[] {
-            new Vertex(-0.5f,  0.0f, 0.0f),
+            new Vertex(0.5f,  0.5f, 0.0f),
+            new Vertex(0.5f, -0.5f, 0.0f),
             new Vertex(-0.5f, -0.5f, 0.0f),
-            new Vertex(0.0f, -0.5f, 0.0f),
-            new Vertex(0.5f, 0.0f, 0.0f),
-            new Vertex(0.5f, 0.5f, 0.0f),
-            new Vertex(0.0f, 0.5f, 0.0f),
+            new Vertex(-0.5f,0.5f, 0.0f)
     };
 
-    private Mesh mesh = new Mesh(vertices, new int[] {0, 1, 2, 3, 4, 5});
+    private Mesh mesh = new Mesh(vertices, new int[] {0, 1, 2, 3, 0, 2});
 
     public void start(){
         game = new Thread(this, "game");
@@ -31,8 +28,9 @@ public class Main implements Runnable{
 
     private void init() {
         window = new Window(WIDTH, HEIGHT, TITLE);
-        window.setBackgroundColor(1.0f,1.0f,0.0f);
+        window.setBackgroundColor(0.4f,0.4f,0.8f);
         renderer = new Renderer();
+        shader = new StaticShader();
         mesh.create();
     }
 
@@ -41,8 +39,11 @@ public class Main implements Runnable{
 
         while (!window.shouldClose()) {
             update();
+            shader.start();
             render();
+            shader.stop();
         }
+        shader.cleanUp();
         window.destroy();
     }
 
