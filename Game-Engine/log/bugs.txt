@@ -1,0 +1,1 @@
+rendering RGB png file doesn't work. Must be RGBA
