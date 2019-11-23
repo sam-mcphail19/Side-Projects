@@ -15,7 +15,32 @@ public class Mesh {
     private int vao, pbo, ibo, cbo, tbo;
     private Image image;
 
+    public enum Color{
+        RED("ff4444ff"),
+        BLUE("4444ffff"),
+        GREEN("44ff44ff"),
+        CYAN("44ffffff"),
+        MAGENTA("ff44ffff"),
+        YELLOW("ffff44ff");
+
+        private String val;
+
+        public String getVal(){
+            return this.val;
+        }
+
+        Color(String val){
+            this.val = val;
+        }
+    }
+
     public Mesh(Vertex[] vertices, int[] indices, Image image){
+        this.vertices = vertices;
+        this.indices = indices;
+        this.image = image;
+    }
+
+    public Mesh(Vertex[] vertices, int[] indices, Color color){
         this.vertices = vertices;
         this.indices = indices;
         this.image = image;

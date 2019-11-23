@@ -5,6 +5,7 @@ import engine.io.Window;
 import engine.math.Vector2f;
 import engine.math.Vector3f;
 import engine.math.Vector4f;
+import engine.graphics.Mesh.Color;
 
 public class Main implements Runnable{
 
@@ -18,24 +19,25 @@ public class Main implements Runnable{
     private Vertex[] vertices = new Vertex[] {
             new Vertex(
                     new Vector3f(-0.5f,  0.7f,0.0f),
-                    new Vector4f(1.0f, 1.0f, 1.0f, 0.5f),
+                    new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                     new Vector2f(0.0f, 0.0f)),
             new Vertex(
                     new Vector3f(-0.5f, -0.7f, 0.0f),
-                    new Vector4f(1.0f, 1.0f, 1.0f, 0.5f),
+                    new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                     new Vector2f(0.0f, 1.0f)),
             new Vertex(
                     new Vector3f( 0.5f, -0.7f, 0.0f),
-                    new Vector4f(0.0f, 1.0f, 1.0f, 0.5f),
+                    new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                     new Vector2f(1.0f, 1.0f)),
             new Vertex(
                     new Vector3f( 0.5f,  0.7f, 0.0f),
-                    new Vector4f(1.0f, 1.0f, 1.0f, 0.5f),
+                    new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                     new Vector2f(1.0f, 0.0f))
     };
     private int[] indices = new int[] {0, 1, 2, 2, 3, 0};
 
-    private Image image = Image.create("res/img/thanos.png");
+    //private Image image = Image.create("res/img/thanos.png");
+    private Image image = Image.create(Color.YELLOW, 512);
     private Mesh mesh = new Mesh(vertices, indices, image);
     //private Mesh mesh = new Mesh(vertices, indices, null);
 

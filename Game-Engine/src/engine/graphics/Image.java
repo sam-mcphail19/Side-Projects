@@ -1,19 +1,20 @@
 package engine.graphics;
 
-import Main.Main;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.stb.STBImage;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+
+import engine.graphics.Mesh.Color;
 
 import static org.lwjgl.system.jemalloc.JEmalloc.je_malloc;
 
@@ -47,6 +48,32 @@ public class Image {
         ByteBuffer image = STBImage.stbi_load_from_memory(imageBuffer, width, height, components, 0);
 
         return new Image(image, width.get(0), height.get(0));
+    }
+
+    public static Image create(Color color, int size){
+        //generate ByteBuffer of size width*height, each byte being the color
+        ByteBuffer imageBuffer = BufferUtils.createByteBuffer(size * size * 4);//4 bytes per pixel (RGBA)
+        byte[] byteColor = hexStringToByteArray(color.getVal());
+
+        for(int i=0; i<size*size; i++){
+            imageBuffer.put(byteColor[0]);// Red component
+            imageBuffer.put(byteColor[1]);// Green component
+            imageBuffer.put(byteColor[2]);// Blue component
+            imageBuffer.put(byteColor[3]);// Alpha component
+        }
+
+        imageBuffer.flip();
+
+        return new Image(imageBuffer, size, size);
+    }
+
+    public static byte[] hexStringToByteArray(String str){
+        int len = str.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(str.charAt(i), 16) << 4) + Character.digit(str.charAt(i+1), 16));
+        }
+        return data;
     }
 
     public void destroy() {
