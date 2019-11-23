@@ -84,7 +84,8 @@ public class Mesh {
 
         GL30.glDeleteVertexArrays(vao);
 
-        image.destroy();
+        if(image != null)
+            image.destroy();
     }
 
     public Vertex[] getVertices() {

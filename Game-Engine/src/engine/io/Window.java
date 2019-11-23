@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-import engine.math.Vector3f;
+import engine.math.Vector4f;
 
 public class Window {
     private long handle;
@@ -17,7 +17,7 @@ public class Window {
     private String title;
     private int frames;
     private static long time;
-    private Vector3f background = new Vector3f(0,0,0);
+    private Vector4f background = new Vector4f(0,0,0, 1);
 
     public Window(int width, int height, String title){
         this.width = width;
@@ -56,7 +56,7 @@ public class Window {
 
     public void update(){
 
-        GL11.glClearColor(background.getX(), background.getY(), background.getZ(), 1.0f);
+        GL11.glClearColor(background.getX(), background.getY(), background.getZ(), background.getW());
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         glfwPollEvents();
 
@@ -83,10 +83,11 @@ public class Window {
         return glfwWindowShouldClose(handle);
     }
 
-    public void setBackgroundColor(float r, float g, float b){
+    public void setBackgroundColor(float r, float g, float b, float a){
         background.setX(r);
         background.setY(g);
         background.setZ(b);
+        background.setW(a);
     }
 
 }
