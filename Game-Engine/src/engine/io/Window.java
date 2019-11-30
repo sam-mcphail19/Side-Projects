@@ -1,5 +1,6 @@
 package engine.io;
 
+import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 
@@ -18,6 +19,7 @@ public class Window {
     private int frames;
     private static long time;
     private Vector4f background = new Vector4f(0,0,0, 1);
+    private Input input;
 
     public Window(int width, int height, String title){
         this.width = width;
@@ -32,6 +34,7 @@ public class Window {
         if (!glfwInit())
             throw new IllegalStateException("Unable to initialize GLFW");
 
+        input = new Input();
         handle = glfwCreateWindow(width, height, title, 0, 0);
 
         if (handle == 0)
@@ -40,13 +43,15 @@ public class Window {
         // Get the resolution of the primary monitor
         GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-        glfwSetWindowPos(handle,
-                (vidmode.width() - width) / 2,
-                (vidmode.height() - height) / 2); // Center the window
+        glfwSetWindowPos(handle, (vidmode.width() - width) / 2, (vidmode.height() - height) / 2); // Center the window
         glfwMakeContextCurrent(handle); // Make the OpenGL context current
 
         GL.createCapabilities();
         GL11.glEnable(GL11.GL_DEPTH_TEST);
+
+        GLFW.glfwSetKeyCallback(handle, input.getKeyboardCallback());
+        GLFW.glfwSetCursorPosCallback(handle, input.getMouseMoveCallback());
+        GLFW.glfwSetMouseButtonCallback(handle, input.getMouseButtonsCallback());
 
         glfwShowWindow(handle); // Make the window visible
         glfwSwapInterval(1); // Enable v-sync
@@ -70,6 +75,7 @@ public class Window {
     }
 
     public void destroy() {
+        input.destroy();
         glfwWindowShouldClose(handle);
         glfwDestroyWindow(handle);
         glfwTerminate();

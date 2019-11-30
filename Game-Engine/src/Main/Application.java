@@ -6,8 +6,9 @@ import engine.math.Vector2f;
 import engine.math.Vector3f;
 import engine.math.Vector4f;
 import engine.graphics.Mesh.Color;
+import engine.objects.Entity;
 
-public class Main implements Runnable{
+public class Application implements Runnable{
 
     public Thread game;
     private Window window;
@@ -39,6 +40,11 @@ public class Main implements Runnable{
     //private Image image = Image.create("res/img/thanos.png");
     private Image image = Image.create(Color.YELLOW, 512);
     private Mesh mesh = new Mesh(vertices, indices, image);
+    private Entity object = new Entity(mesh,
+            new Vector3f(0,0,0),
+            new Vector3f(1,0,0),
+            new Vector3f(0,0,0),
+            0.02f);
     //private Mesh mesh = new Mesh(vertices, indices, null);
 
     private void start(){
@@ -71,7 +77,7 @@ public class Main implements Runnable{
 
     private void render(){
         //renderer.renderMeshWireFrame(mesh);
-        renderer.renderMeshFill(mesh);
+        renderer.renderMeshFill(object.getMesh());
         window.swapBuffers();
     }
 
@@ -82,7 +88,7 @@ public class Main implements Runnable{
     }
 
     public static void main(String[] args) {
-        new Main().start();
+        new Application().start();
     }
 
 }
