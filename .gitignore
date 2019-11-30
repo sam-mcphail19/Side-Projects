@@ -1,6 +1,12 @@
 .idea
-*.iml
-__pycache__
-*.pyc
+.vs
 .vscode
 Software-Report/dist
+__pycache__
+*.iml
+*.pyc
+*.suo
+*.pdb
+*.idb
+*.ilk
+*.tlog
