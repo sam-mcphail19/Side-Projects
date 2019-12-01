@@ -3,8 +3,9 @@
 #include <iostream>
 #include <glew.h>
 #include <glfw3.h>
+#include "Input.h"
 
-namespace sam_engine { namespace graphics {
+namespace sam_engine { namespace io {
 
 	class Window {
 
@@ -12,6 +13,7 @@ namespace sam_engine { namespace graphics {
 		const char* m_Name;
 		int m_Width, m_Height;
 		GLFWwindow* m_Window;
+		Input m_Input;
 
 	public:
 		Window(const char* name, int width, int height);

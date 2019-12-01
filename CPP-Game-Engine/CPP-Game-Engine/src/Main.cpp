@@ -1,12 +1,12 @@
 
 #include <iostream>
 
-#include "graphics\Window.h"
+#include "io\Window.h"
 
 int main() {
 
 	using namespace sam_engine;
-	using namespace graphics;
+	using namespace io;
 
 	Window window("Game Engine", 1280, 720);
 	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
