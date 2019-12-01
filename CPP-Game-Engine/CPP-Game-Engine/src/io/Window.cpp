@@ -34,8 +34,11 @@ namespace sam_engine { namespace io {
 		}
 
 		glfwMakeContextCurrent(m_Window);
+
 		glfwSetWindowSizeCallback(m_Window, window_resize);
 		glfwSetKeyCallback(m_Window, this->m_Input.key_callback);
+		glfwSetMouseButtonCallback(m_Window, this->m_Input.mouse_button_callback);
+		glfwSetCursorPosCallback(m_Window, this->m_Input.cursor_pos_callback);
 
 		return true;
 		
