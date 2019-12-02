@@ -108,7 +108,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -160,10 +160,20 @@
     <ClCompile Include="src\io\Input.cpp" />
     <ClCompile Include="src\io\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\math\mat4.cpp" />
+    <ClCompile Include="src\math\vec2.cpp" />
+    <ClCompile Include="src\math\vec3.cpp" />
+    <ClCompile Include="src\math\vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\io\Input.h" />
     <ClInclude Include="src\io\Window.h" />
+    <ClInclude Include="src\math\mat4.h" />
+    <ClInclude Include="src\math\math.h" />
+    <ClInclude Include="src\math\vec2.h" />
+    <ClInclude Include="src\math\vec3.h" />
+    <ClInclude Include="src\math\vec4.h" />
+    <ClInclude Include="src\utils\fileutils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
