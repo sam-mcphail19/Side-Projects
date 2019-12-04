@@ -158,7 +158,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\buffers\indexBuffer.cpp" />
+    <ClCompile Include="src\graphics\buffers\vertexArray.cpp" />
+    <ClCompile Include="src\graphics\buffers\vertexBuffer.cpp" />
     <ClCompile Include="src\graphics\shader.cpp" />
+    <ClCompile Include="src\graphics\simpleRenderer2d.cpp" />
     <ClCompile Include="src\io\Input.cpp" />
     <ClCompile Include="src\io\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
@@ -169,7 +173,14 @@
     <ClCompile Include="src\utils\fileutils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\renderable2d.h" />
+    <ClInclude Include="src\graphics\renderer2d.h" />
+    <ClInclude Include="src\graphics\buffers\buffers.h" />
+    <ClInclude Include="src\graphics\buffers\indexBuffer.h" />
+    <ClInclude Include="src\graphics\buffers\vertexArray.h" />
+    <ClInclude Include="src\graphics\buffers\vertexBuffer.h" />
     <ClInclude Include="src\graphics\shader.h" />
+    <ClInclude Include="src\graphics\simpleRenderer2d.h" />
     <ClInclude Include="src\io\Input.h" />
     <ClInclude Include="src\io\Window.h" />
     <ClInclude Include="src\math\mat4.h" />

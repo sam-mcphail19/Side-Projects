@@ -57,6 +57,10 @@ namespace sam_engine { namespace io {
 	
 	void Window::update() {
 
+		GLenum error = glGetError();
+		if (error != GL_NO_ERROR)
+			std::cout << "OpenGL Error: " << error << std::endl;
+
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
 
@@ -64,6 +68,12 @@ namespace sam_engine { namespace io {
 
 	bool Window::closed() {
 		return glfwWindowShouldClose(m_Window);
+	}
+
+	void Window::setBackground(float r, float g, float b) {
+	
+		glClearColor(r, g, b, 1.0f);
+	
 	}
 
 	void window_resize(GLFWwindow* window, int width, int height) {
