@@ -5,7 +5,7 @@ namespace sam_engine { namespace graphics {
 
 	void SimpleRenderer2D::submit(const Renderable2D *renderable) {
 	
-		m_Queue.push_back(renderable);
+		m_Queue.push_back((Sprite*) renderable);
 
 	}
 
@@ -13,15 +13,16 @@ namespace sam_engine { namespace graphics {
 	
 		while (!m_Queue.empty()) {
 		
-			const Renderable2D* renderable = m_Queue.front();
-			renderable->getVAO()->bind();
-			renderable->getIBO()->bind();
+			const Sprite *sprite = m_Queue.front();
+			sprite->getVAO()->bind();
+			sprite->getIBO()->bind();
 
-			renderable->getShader().setUniformMat4("model_matrix", math::mat4::translate(renderable->getPosition()));
-			glDrawElements(GL_TRIANGLES, renderable->getIBO()->getSize(), GL_UNSIGNED_SHORT, nullptr);
+			Shader shader = sprite->getShader();
+			shader.setUniformMat4("model_matrix", math::mat4::translate(sprite->getPosition()));
+			glDrawElements(GL_TRIANGLES, sprite->getIBO()->getSize(), GL_UNSIGNED_SHORT, nullptr);
 
-			renderable->getIBO()->unbind();
-			renderable->getVAO()->unbind();
+			sprite->getIBO()->unbind();
+			sprite->getVAO()->unbind();
 
 			m_Queue.pop_front();
 		

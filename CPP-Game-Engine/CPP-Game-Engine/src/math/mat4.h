@@ -13,6 +13,7 @@ namespace sam_engine { namespace math {
 		mat4(float diagonal);
 
 		mat4& multiply(const mat4 &other);
+		vec4 multiply(const vec4& vec);
 		friend mat4 operator*(mat4 left, const mat4& right);
 		mat4& operator*=(const mat4& other);
 

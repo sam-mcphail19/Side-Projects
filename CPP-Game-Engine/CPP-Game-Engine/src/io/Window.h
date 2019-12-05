@@ -18,6 +18,7 @@ namespace sam_engine { namespace io {
 	public:
 		Window(const char* name, int width, int height);
 		~Window();
+		void center();
 		void clear() const;
 		void update();
 		bool closed();

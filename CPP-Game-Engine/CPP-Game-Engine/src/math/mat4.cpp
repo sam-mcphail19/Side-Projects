@@ -60,8 +60,8 @@ namespace sam_engine {
 			result.elements[0 + 0 * 4] = a;
 			result.elements[1 + 1 * 4] = q;
 			result.elements[2 + 2 * 4] = b;
-			result.elements[2 + 3 * 4] = -1.0f;
-			result.elements[3 + 2 * 4] = c;
+			result.elements[3 + 2 * 4] = -1.0f;
+			result.elements[2 + 3 * 4] = c;
 
 			return result;
 		}
@@ -90,6 +90,35 @@ namespace sam_engine {
 		
 		}
 
+		vec4 mat4::multiply(const vec4& vec) {
+
+			float rslt[4];
+			float vecArr[] = {
+
+				vec.x,
+				vec.y,
+				vec.z,
+				vec.w
+
+			};
+
+			for (int row = 0; row < 4; row++) {
+
+				float sum = 0.0f;
+				for (int col = 0; col < 4; col++) {
+				
+					sum += elements[col + row * 4] * vecArr[col];
+				
+				}
+				
+				rslt[row] = sum;
+
+			}
+
+			return vec4(rslt[0], rslt[1], rslt[2], rslt[3]);
+
+		}
+
 		mat4 operator*(mat4 left, const mat4& right)
 		{
 			return left.multiply(right);
@@ -106,7 +135,7 @@ namespace sam_engine {
 
 			result.elements[0 + 3 * 4] = translation.x;
 			result.elements[1 + 3 * 4] = translation.y;
-			result.elements[2 + 3 * 4] = translation.z;
+			result.elements[2 + 3 * 4] = -translation.z;
 
 			return result;
 		}

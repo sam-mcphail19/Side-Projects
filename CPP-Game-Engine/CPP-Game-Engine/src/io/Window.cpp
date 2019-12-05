@@ -32,7 +32,8 @@ namespace sam_engine { namespace io {
 			std::cout << "Failed to create window" << std::endl;
 			return false;
 		}
-
+		
+		center();
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowSizeCallback(m_Window, window_resize);
 
@@ -49,6 +50,14 @@ namespace sam_engine { namespace io {
 		
 	}
 
+	void Window::center() {
+
+		GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+		const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+		glfwSetWindowPos(m_Window, (mode->width - m_Width) / 2, (mode->height - m_Height) / 2);
+	
+	}
+
 	void Window::clear() const {
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -60,6 +69,9 @@ namespace sam_engine { namespace io {
 		GLenum error = glGetError();
 		if (error != GL_NO_ERROR)
 			std::cout << "OpenGL Error: " << error << std::endl;
+
+		if (m_Input.isKeyPressed(GLFW_KEY_ESCAPE))
+			glfwSetWindowShouldClose(m_Window, GL_TRUE);
 
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();

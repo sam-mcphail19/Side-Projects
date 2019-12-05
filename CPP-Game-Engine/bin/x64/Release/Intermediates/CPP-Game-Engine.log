@@ -1,0 +1,23 @@
+﻿  indexBuffer.cpp
+  vertexArray.cpp
+  vertexBuffer.cpp
+  shader.cpp
+  simpleRenderer2d.cpp
+  sprite.cpp
+  Input.cpp
+  Window.cpp
+  Main.cpp
+  mat4.cpp
+  vec2.cpp
+  vec3.cpp
+  vec4.cpp
+  fileutils.cpp
+cl : command line warning D9002: ignoring unknown option '/arch:SSE2'
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  334 of 335 functions (99.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\bin\x64\Release\vc120.pdb'; linking object as if no debug info
+  CPP-Game-Engine.vcxproj -> C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\bin\x64\Release\CPP-Game-Engine.exe
