@@ -4,12 +4,15 @@
 #include "renderable2d.h"
 #include "renderer2d.h"
 
+#include <cstddef>
+
 namespace sam_engine { namespace graphics {
 
 #define SHADER_VERTEX_ATTR 0
 #define SHADER_COLOR_ATTR 1
 
 #define MAX_SPRITES 60000
+#define MAX_INDICES 360000 // MAX_SPRITES * 6
 #define SPRITE_SIZE sizeof(VertexData) * 4 //each sprite has 4 vertices
 #define INDICES_SIZE MAX_SPRITES*6 // 6 indices to draw 2 triangles
 

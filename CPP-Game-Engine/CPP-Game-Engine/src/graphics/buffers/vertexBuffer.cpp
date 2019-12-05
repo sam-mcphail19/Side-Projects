@@ -14,6 +14,12 @@ namespace sam_engine { namespace graphics {
 	
 	}
 
+	VertexBuffer::~VertexBuffer() {
+	
+		glDeleteBuffers(1, &m_BufferID);
+	
+	}
+
 	void VertexBuffer::bind() const {
 	
 		glBindBuffer(GL_ARRAY_BUFFER, m_BufferID);

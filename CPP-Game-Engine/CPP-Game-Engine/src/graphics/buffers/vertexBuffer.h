@@ -11,6 +11,7 @@ namespace sam_engine { namespace graphics {
 
 	public:
 		VertexBuffer(GLfloat *data, GLuint size, GLuint count);
+		~VertexBuffer();
 
 		void bind() const;
 		void unbind() const;

@@ -49,13 +49,13 @@
     <ClCompile Include="src\graphics\buffers\vertexArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\simpleRenderer2d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\batchRenderer2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -75,10 +75,10 @@
     <ClInclude Include="src\graphics\buffers\buffers.h" />
     <ClInclude Include="src\graphics\renderer2d.h" />
     <ClInclude Include="src\graphics\renderable2d.h" />
-    <ClInclude Include="src\graphics\simpleRenderer2d.h" />
     <ClInclude Include="src\utils\timer.h" />
     <ClInclude Include="src\graphics\sprite.h" />
     <ClInclude Include="src\graphics\batchRenderer2D.h" />
+    <ClInclude Include="src\graphics\mesh.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shaders\basic.vert" />

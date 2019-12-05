@@ -11,6 +11,8 @@ namespace sam_engine { namespace graphics {
 
 	public:
 		IndexBuffer(GLushort *data, GLuint size);
+		IndexBuffer(GLuint* data, GLuint size);
+		~IndexBuffer();
 
 		void bind() const;
 		void unbind() const;

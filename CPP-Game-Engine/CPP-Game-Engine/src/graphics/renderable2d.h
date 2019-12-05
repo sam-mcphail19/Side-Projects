@@ -9,7 +9,7 @@ namespace sam_engine { namespace graphics {
 	struct VertexData {
 
 		math::vec3 vertex;
-		math::vec4 color;
+		unsigned int color;
 
 	};
 

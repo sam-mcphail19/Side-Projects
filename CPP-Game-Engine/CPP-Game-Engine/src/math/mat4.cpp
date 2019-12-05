@@ -77,9 +77,9 @@ namespace sam_engine {
 					float sum = 0.0f;
 					for (int e = 0; e < 4; e++)
 					{
-						sum += elements[e + row * 4] * other.elements[col + e * 4];
+						sum += elements[row + e * 4] * other.elements[e + col * 4];
 					}
-					rslt[col + row * 4] = sum;
+					rslt[row + col * 4] = sum;
 
 				}
 
