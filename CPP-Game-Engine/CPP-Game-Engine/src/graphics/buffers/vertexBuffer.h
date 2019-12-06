@@ -16,7 +16,8 @@ namespace sam_engine { namespace graphics {
 		void bind() const;
 		void unbind() const;
 
-		GLuint getCount() const;
+		inline GLuint getCount() const { return m_Count; };
+		inline GLuint getID() const { return m_BufferID; };
 
 	};
 

@@ -24,10 +24,12 @@ namespace sam_engine { namespace graphics {
 		buffer->bind();
 
 		glEnableVertexAttribArray(index);
-		glVertexAttribPointer(index, buffer->getCount(), GL_FLOAT, GL_FALSE, 0, 0);
+		glVertexAttribPointer(index, buffer->getCount(), GL_FLOAT, GL_FALSE, 0, (void*) 0);
 
-		unbind();
 		buffer->unbind();
+		unbind();
+
+		m_Buffers.push_back(buffer);
 	
 	}
 
@@ -40,6 +42,12 @@ namespace sam_engine { namespace graphics {
 	void VertexArray::unbind() const {
 
 		glBindVertexArray(0);
+
+	}
+
+	void VertexArray::draw(GLuint count) {
+	
+		glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, NULL);
 
 	}
 

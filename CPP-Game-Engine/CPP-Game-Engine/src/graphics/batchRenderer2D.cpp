@@ -65,9 +65,6 @@ namespace sam_engine { namespace graphics {
 
 	void BatchRenderer2D::submit(const Renderable2D* renderable) {
 
-		if (sizeof(m_IndexCount) > MAX_INDICES)
-			flush();
-
 		const math::vec3& position = renderable->getPosition();
 		const math::vec2& size = renderable->getSize();
 		const math::vec4& color = renderable->getColor();

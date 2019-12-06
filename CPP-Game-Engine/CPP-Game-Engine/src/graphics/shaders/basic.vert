@@ -16,8 +16,11 @@ out DATA{
 
 void main(){
 
-    gl_Position = proj_matrix * view_matrix * model_matrix * position;
-	out_data.position = model_matrix * position;
+	gl_Position = proj_matrix * model_matrix * position;
+	out_data.position = position;
+	//out_data.color = vec4(0.2,0.3,0.8,1);
+   // gl_Position = proj_matrix * view_matrix * model_matrix * position;
+	//out_data.position = model_matrix * position;
 	out_data.color = color;
 
 }

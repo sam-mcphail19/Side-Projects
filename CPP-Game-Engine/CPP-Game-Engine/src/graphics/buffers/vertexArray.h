@@ -22,6 +22,8 @@ namespace sam_engine { namespace graphics {
 		void bind() const;
 		void unbind() const;
 
+		void draw(GLuint count);
+
 	};
 
 } }

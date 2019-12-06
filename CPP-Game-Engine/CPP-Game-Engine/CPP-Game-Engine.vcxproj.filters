@@ -58,6 +58,9 @@
     <ClCompile Include="src\graphics\mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\forwardRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\io\Window.h" />
@@ -79,6 +82,8 @@
     <ClInclude Include="src\graphics\sprite.h" />
     <ClInclude Include="src\graphics\batchRenderer2D.h" />
     <ClInclude Include="src\graphics\mesh.h" />
+    <ClInclude Include="src\graphics\renderer3D.h" />
+    <ClInclude Include="src\graphics\forwardRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shaders\basic.vert" />

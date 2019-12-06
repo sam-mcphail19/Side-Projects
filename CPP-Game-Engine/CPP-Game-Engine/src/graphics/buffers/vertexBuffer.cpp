@@ -32,10 +32,4 @@ namespace sam_engine { namespace graphics {
 
 	}
 
-	GLuint VertexBuffer::getCount() const {
-	
-		return m_Count;
-
-	}
-
 } }
