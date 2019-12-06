@@ -7,9 +7,6 @@
 namespace sam_engine { namespace graphics {
 
 	class Renderer3D {
-
-	protected:
-		std::deque<Mesh*> m_Buffer;
 		 
 	private:
 		virtual void init() = 0;

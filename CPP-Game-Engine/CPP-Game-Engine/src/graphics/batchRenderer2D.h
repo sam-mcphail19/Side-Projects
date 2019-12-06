@@ -12,9 +12,8 @@ namespace sam_engine { namespace graphics {
 #define SHADER_COLOR_ATTR 1
 
 #define MAX_SPRITES 60000
-#define MAX_INDICES 360000 // MAX_SPRITES * 6
+#define MAX_INDICES 360000 // MAX_SPRITES * 6 indices to draw 2 triangles
 #define SPRITE_SIZE sizeof(VertexData) * 4 //each sprite has 4 vertices
-#define INDICES_SIZE MAX_SPRITES*6 // 6 indices to draw 2 triangles
 
 	class BatchRenderer2D : public Renderer2D {
 

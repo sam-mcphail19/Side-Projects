@@ -1,21 +1,21 @@
 
-#include "forwardRenderer.h"
+#include "forwardRenderer3D.h"
 
 namespace sam_engine { namespace graphics {
 
-	ForwardRenderer::ForwardRenderer() {
+	ForwardRenderer3D::ForwardRenderer3D() {
 	
 	
 
 	}
 
-	void ForwardRenderer::init() {
+	void ForwardRenderer3D::init() {
 
 
 
 	}
 
-	void ForwardRenderer::begin() {
+	void ForwardRenderer3D::begin() {
 
 		glEnable(GL_DEPTH_TEST);
 		glDepthFunc(GL_LESS);
@@ -24,22 +24,22 @@ namespace sam_engine { namespace graphics {
 
 	}
 
-	void ForwardRenderer::submit(Mesh *mesh) {
+	void ForwardRenderer3D::submit(Mesh *mesh) {
 
 		m_Buffer.push_back(mesh);
 
 	}
 
-	void ForwardRenderer::end() {
+	void ForwardRenderer3D::end() {
 
 
 
 	}
 
-	void ForwardRenderer::flush() {
+	void ForwardRenderer3D::flush() {
 
 		while (!m_Buffer.empty()) {
-		
+
 			m_Buffer.front()->render();
 			m_Buffer.pop_front();
 

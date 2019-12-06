@@ -168,7 +168,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\graphics\batchRenderer2D.cpp" />
-    <ClCompile Include="src\graphics\forwardRenderer.cpp" />
+    <ClCompile Include="src\graphics\batchRenderer3D.cpp" />
+    <ClCompile Include="src\graphics\forwardRenderer3D.cpp" />
     <ClCompile Include="src\graphics\buffers\indexBuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexArray.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexBuffer.cpp" />
@@ -186,7 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\graphics\batchRenderer2D.h" />
-    <ClInclude Include="src\graphics\forwardRenderer.h" />
+    <ClInclude Include="src\graphics\batchRenderer3D.h" />
+    <ClInclude Include="src\graphics\forwardRenderer3D.h" />
     <ClInclude Include="src\graphics\renderable2d.h" />
     <ClInclude Include="src\graphics\mesh.h" />
     <ClInclude Include="src\graphics\renderer2d.h" />

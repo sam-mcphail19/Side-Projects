@@ -4,15 +4,16 @@
 
 namespace sam_engine { namespace graphics {
 
-	class ForwardRenderer : public Renderer3D {
+	class ForwardRenderer3D : public Renderer3D {
 
 	private:
+		std::deque<Mesh*> m_Buffer;
 
 	private:
 		void init() override;
 
 	public:
-		ForwardRenderer();
+		ForwardRenderer3D();
 
 		void begin() override;
 		void submit(Mesh* mesh) override;

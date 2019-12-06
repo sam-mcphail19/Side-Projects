@@ -34,10 +34,10 @@ namespace sam_engine { namespace graphics {
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		GLuint* indices = new GLuint[INDICES_SIZE];
+		GLuint* indices = new GLuint[MAX_INDICES];
 
 		int offset = 0;
-		for (int i = 0; i < INDICES_SIZE; i += 6)
+		for (int i = 0; i < MAX_INDICES; i += 6)
 		{
 			indices[i] = offset + 0;
 			indices[i + 1] = offset + 1;
@@ -50,7 +50,7 @@ namespace sam_engine { namespace graphics {
 			offset += 4; // get the next 4 vertices
 		}
 
-		m_IBO = new IndexBuffer(indices, INDICES_SIZE);
+		m_IBO = new IndexBuffer(indices, MAX_INDICES);
 
 		glBindVertexArray(0);
 
