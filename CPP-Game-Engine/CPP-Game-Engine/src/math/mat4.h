@@ -20,6 +20,7 @@ namespace sam_engine { namespace math {
 		static mat4 identity();
 		static mat4 orthographic(float left, float right, float bottom, float top, float near, float far);
 		static mat4 perspective(float fov, float aspectRatio, float near, float far);
+		static mat4 lookAt(vec3 &from, vec3 &to, vec3& arbitrary);
 
 		static mat4 translate(const vec3& translation);
 		static mat4 rotate(float angle, const vec3& axis);

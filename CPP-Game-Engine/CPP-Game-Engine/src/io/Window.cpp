@@ -33,18 +33,22 @@ namespace sam_engine { namespace io {
 			return false;
 		}
 		
-		center();
 		glfwMakeContextCurrent(m_Window);
-		glfwSetWindowSizeCallback(m_Window, window_resize);
-
+		
 		if (glewInit() != GLEW_OK) {
 			std::cout << "Could not initialize GLEW!" << std::endl;
 			return false;
 		}
 
+		center();
+
+		glfwSetWindowSizeCallback(m_Window, window_resize);
 		glfwSetKeyCallback(m_Window, this->m_Input.key_callback);
 		glfwSetMouseButtonCallback(m_Window, this->m_Input.mouse_button_callback);
 		glfwSetCursorPosCallback(m_Window, this->m_Input.cursor_pos_callback);
+
+		glEnable(GL_DEPTH_TEST);
+		glDepthFunc(GL_LESS);
 
 		return true;
 		

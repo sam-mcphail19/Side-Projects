@@ -64,6 +64,9 @@
     <ClCompile Include="src\graphics\batchRenderer3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\io\Window.h" />
@@ -88,6 +91,7 @@
     <ClInclude Include="src\graphics\renderer3D.h" />
     <ClInclude Include="src\graphics\forwardRenderer3D.h" />
     <ClInclude Include="src\graphics\batchRenderer3D.h" />
+    <ClInclude Include="src\graphics\camera.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shaders\basic.vert" />

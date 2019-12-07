@@ -17,9 +17,6 @@ namespace sam_engine { namespace graphics {
 
 	void ForwardRenderer3D::begin() {
 
-		glEnable(GL_DEPTH_TEST);
-		glDepthFunc(GL_LESS);
-
 		m_Buffer.clear();
 
 	}

@@ -66,6 +66,32 @@ namespace sam_engine {
 			return result;
 		}
 
+		mat4 mat4::lookAt(vec3& from, vec3& to, vec3& arbitrary) {
+		
+			vec3 forward = (to - from).normalize();
+			vec3 right = arbitrary.cross(forward).normalize();
+			vec3 up = forward.cross(right).normalize();
+
+			mat4 cameraMat = mat4::identity();
+
+			cameraMat.elements[0 + 0 * 4] = right.x;
+			cameraMat.elements[0 + 1 * 4] = right.y;
+			cameraMat.elements[0 + 2 * 4] = right.z;
+			cameraMat.elements[1 + 0 * 4] = up.x;
+			cameraMat.elements[1 + 1 * 4] = up.y;
+			cameraMat.elements[1 + 2 * 4] = up.z;
+			cameraMat.elements[2 + 0 * 4] = forward.x;
+			cameraMat.elements[2 + 1 * 4] = forward.y;
+			cameraMat.elements[2 + 2 * 4] = forward.z;
+
+			cameraMat.elements[3 + 0 * 4] = to.x;
+			cameraMat.elements[3 + 1 * 4] = to.y;
+			cameraMat.elements[3 + 2 * 4] = to.z;
+
+			return cameraMat;
+		
+		}
+
 		mat4& mat4::multiply(const mat4 &other) {
 
 			float rslt[16];

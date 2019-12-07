@@ -23,9 +23,10 @@ namespace sam_engine { namespace io {
 		void update();
 		bool closed();
 		void setBackground(float r, float g, float b);
-		int getWidth() const { return m_Width; };
-		int getHeight() const { return m_Height; };
-		Input getInput() const { return m_Input; };
+		inline GLFWwindow* getWindow() const { return m_Window; };
+		inline int getWidth() const { return m_Width; };
+		inline int getHeight() const { return m_Height; };
+		inline Input getInput() const { return m_Input; };
 
 	private:
 		bool init();

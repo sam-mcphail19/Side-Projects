@@ -17,6 +17,11 @@ namespace sam_engine { namespace math {
 		vec3& subtract(const vec3& other);
 		vec3& multiply(const vec3& other);
 		vec3& divide(const vec3& other);
+		vec3& divide(float constant);
+
+		vec3& normalize();
+		vec3& cross(const vec3& other);
+		float dot(const vec3& other);
 
 		friend vec3 operator+(vec3 left, const vec3& right);
 		friend vec3 operator-(vec3 left, const vec3& right);
@@ -30,6 +35,8 @@ namespace sam_engine { namespace math {
 		vec3& operator-=(const vec3& other);
 		vec3& operator*=(const vec3& other);
 		vec3& operator/=(const vec3& other);
+
+		float magnitude();
 
 		std::string ToString() const;
 

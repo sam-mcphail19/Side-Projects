@@ -3,9 +3,7 @@
 layout (location = 0) in vec4 position;
 layout (location = 1) in vec4 color;
 
-uniform mat4 proj_matrix;
-uniform mat4 view_matrix = mat4(1.0);
-uniform mat4 model_matrix = mat4(1.0);
+uniform mat4 mvp;
 
 out DATA{
 
@@ -16,11 +14,8 @@ out DATA{
 
 void main(){
 
-	gl_Position = proj_matrix * model_matrix * position;
+	gl_Position = mvp * position;
 	out_data.position = position;
-	//out_data.color = vec4(0.2,0.3,0.8,1);
-   // gl_Position = proj_matrix * view_matrix * model_matrix * position;
-	//out_data.position = model_matrix * position;
 	out_data.color = color;
 
 }

@@ -1,3 +1,6 @@
-﻿  batchRenderer3D.cpp
-C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\graphics\batchRenderer3D.cpp(55,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Main.cpp
+C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\Main.cpp(30,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  camera.cpp
+  Generating Code...
+C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\Main.cpp(118,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   CPP-Game-Engine.vcxproj -> C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\bin\x64\Debug\CPP-Game-Engine.exe

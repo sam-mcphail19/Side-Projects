@@ -58,6 +58,38 @@ namespace sam_engine { namespace math {
 
 	}
 
+	vec3& vec3::divide(float constant) {
+
+		x /= constant;
+		y /= constant;
+		z /= constant;
+
+		return *this;
+
+	}
+
+	vec3& vec3::normalize() {
+	
+		return this->divide(this->magnitude());
+	
+	}
+
+	vec3& vec3::cross(const vec3& other) {
+	
+		return * new vec3(
+			this->y*other.z - this->z*other.y,
+			this->z*other.x - this->x*other.z,
+			this->x*other.y - this->y*other.x
+		);
+
+	}
+
+	float vec3::dot(const vec3& other) {
+	
+		return this->x * other.x + this->y * other.y + this->z * other.z;
+	
+	}
+
 	vec3 operator+(vec3 left, const vec3& right) {
 	
 		return left.add(right);
@@ -116,6 +148,12 @@ namespace sam_engine { namespace math {
 
 		return divide(other);
 
+	}
+
+	float vec3::magnitude() {
+	
+		return sqrt(x*x + y*y + z*z);
+	
 	}
 
 	std::string vec3::ToString() const
