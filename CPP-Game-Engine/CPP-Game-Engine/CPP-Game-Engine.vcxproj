@@ -177,8 +177,8 @@
     <ClCompile Include="src\graphics\mesh.cpp" />
     <ClCompile Include="src\graphics\shader.cpp" />
     <ClCompile Include="src\graphics\sprite.cpp" />
-    <ClCompile Include="src\io\Input.cpp" />
-    <ClCompile Include="src\io\Window.cpp" />
+    <ClCompile Include="src\graphics\Input.cpp" />
+    <ClCompile Include="src\graphics\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\math\mat4.cpp" />
     <ClCompile Include="src\math\vec2.cpp" />
@@ -201,8 +201,8 @@
     <ClInclude Include="src\graphics\renderer3D.h" />
     <ClInclude Include="src\graphics\shader.h" />
     <ClInclude Include="src\graphics\sprite.h" />
-    <ClInclude Include="src\io\Input.h" />
-    <ClInclude Include="src\io\Window.h" />
+    <ClInclude Include="src\graphics\Input.h" />
+    <ClInclude Include="src\graphics\Window.h" />
     <ClInclude Include="src\math\mat4.h" />
     <ClInclude Include="src\math\math.h" />
     <ClInclude Include="src\math\vec2.h" />

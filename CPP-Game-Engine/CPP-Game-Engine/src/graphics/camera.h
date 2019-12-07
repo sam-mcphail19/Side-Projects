@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../math/math.h"
+#include "Window.h"
 
 namespace sam_engine { namespace graphics {
 
@@ -16,6 +17,8 @@ namespace sam_engine { namespace graphics {
 		Camera(math::vec3 pos, float pitch, float yaw);
 
 		math::mat4* createViewMatrix();
+
+		void input(Window *window, float sensitivity);
 
 		void setPos(math::vec3 pos);
 		void setPitch(float pitch);

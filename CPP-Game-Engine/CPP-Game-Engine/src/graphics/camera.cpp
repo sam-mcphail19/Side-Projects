@@ -24,6 +24,54 @@ namespace sam_engine { namespace graphics {
 		
 	}
 
+	void Camera::input(Window *window, float sensitivity) {
+		
+		Input input = (*window).getInput();
+		
+		if (input.isKeyPressed(GLFW_KEY_W)) {
+
+			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z + sensitivity));
+
+		}
+		if (input.isKeyPressed(GLFW_KEY_A)) {
+
+			setPos(math::vec3(m_Pos.x - sensitivity, m_Pos.y, m_Pos.z));
+
+		}
+		if (input.isKeyPressed(GLFW_KEY_S)) {
+
+			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z - sensitivity));
+
+		}
+		if (input.isKeyPressed(GLFW_KEY_D)) {
+
+			setPos(math::vec3(m_Pos.x + sensitivity, m_Pos.y, m_Pos.z));
+
+		}
+		if (input.isKeyPressed(GLFW_KEY_SPACE)) {
+
+			setPos(math::vec3(m_Pos.x, m_Pos.y + sensitivity, m_Pos.z));
+
+		}
+		if (input.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
+
+			setPos(math::vec3(m_Pos.x, m_Pos.y - sensitivity, m_Pos.z));
+
+		}
+
+		if (input.isButtonPressed(GLFW_MOUSE_BUTTON_1)) {
+
+			(*window).hideCursor();
+
+		}
+		else {
+
+			(*window).showCursor();
+
+		}
+
+	}
+
 	void Camera::setPos(math::vec3 pos) {
 	
 		m_Pos.x = pos.x;

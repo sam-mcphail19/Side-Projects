@@ -4,7 +4,7 @@
 #include <glew.h>
 #include <glfw3.h>
 
-namespace sam_engine { namespace io {
+namespace sam_engine { namespace graphics {
 
 	#define MAX_KEYS 1024
 	#define MAX_BUTTONS 32

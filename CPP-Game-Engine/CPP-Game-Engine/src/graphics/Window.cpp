@@ -1,6 +1,6 @@
 #include "Window.h"
 
-namespace sam_engine { namespace io {
+namespace sam_engine { namespace graphics {
 
 	void window_resize(GLFWwindow* window, int width, int height);
 
@@ -90,6 +90,18 @@ namespace sam_engine { namespace io {
 	
 		glClearColor(r, g, b, 1.0f);
 	
+	}
+
+	void Window::hideCursor() {
+	
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+	
+	}
+
+	void Window::showCursor() {
+
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
 	}
 
 	void window_resize(GLFWwindow* window, int width, int height) {

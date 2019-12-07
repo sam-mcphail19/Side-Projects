@@ -5,7 +5,7 @@
 #include <glfw3.h>
 #include "Input.h"
 
-namespace sam_engine { namespace io {
+namespace sam_engine { namespace graphics {
 
 	class Window {
 
@@ -23,6 +23,8 @@ namespace sam_engine { namespace io {
 		void update();
 		bool closed();
 		void setBackground(float r, float g, float b);
+		void hideCursor();
+		void showCursor();
 		inline GLFWwindow* getWindow() const { return m_Window; };
 		inline int getWidth() const { return m_Width; };
 		inline int getHeight() const { return m_Height; };

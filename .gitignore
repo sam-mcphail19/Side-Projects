@@ -10,3 +10,4 @@ Software-Report/dist
 *.idb
 *.ilk
 *.tlog
+*.obj

@@ -1,6 +1,6 @@
 #include "Input.h"
 
-namespace sam_engine { namespace io {
+namespace sam_engine { namespace graphics {
 
 	bool Input::m_Keys[MAX_KEYS];
 	bool Input::m_MouseButtons[MAX_BUTTONS];

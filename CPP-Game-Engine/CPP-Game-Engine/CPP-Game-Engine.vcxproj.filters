@@ -16,12 +16,6 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\io\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\io\Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\math\vec2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,10 +61,14 @@
     <ClCompile Include="src\graphics\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\io\Window.h" />
-    <ClInclude Include="src\io\Input.h" />
     <ClInclude Include="src\math\vec2.h" />
     <ClInclude Include="src\math\vec4.h" />
     <ClInclude Include="src\math\vec3.h" />
@@ -92,6 +90,8 @@
     <ClInclude Include="src\graphics\forwardRenderer3D.h" />
     <ClInclude Include="src\graphics\batchRenderer3D.h" />
     <ClInclude Include="src\graphics\camera.h" />
+    <ClInclude Include="src\graphics\Window.h" />
+    <ClInclude Include="src\graphics\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shaders\basic.vert" />
