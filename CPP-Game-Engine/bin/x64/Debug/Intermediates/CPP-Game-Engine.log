@@ -1,4 +1,6 @@
-﻿  Main.cpp
+﻿  Window.cpp
   camera.cpp
+C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\graphics\camera.cpp(69,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating Code...
+C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\graphics\camera.cpp(70,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CPP-Game-Engine.vcxproj -> C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\bin\x64\Debug\CPP-Game-Engine.exe

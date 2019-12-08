@@ -24,49 +24,66 @@ namespace sam_engine { namespace graphics {
 		
 	}
 
-	void Camera::input(Window *window, float sensitivity) {
+	void Camera::input(Window *window, float keySens, float mouseSens) {
 		
 		Input input = (*window).getInput();
 		
 		if (input.isKeyPressed(GLFW_KEY_W)) {
 
-			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z + sensitivity));
+			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z + keySens));
 
 		}
 		if (input.isKeyPressed(GLFW_KEY_A)) {
 
-			setPos(math::vec3(m_Pos.x - sensitivity, m_Pos.y, m_Pos.z));
+			setPos(math::vec3(m_Pos.x - keySens, m_Pos.y, m_Pos.z));
 
 		}
 		if (input.isKeyPressed(GLFW_KEY_S)) {
 
-			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z - sensitivity));
+			setPos(math::vec3(m_Pos.x, m_Pos.y, m_Pos.z - keySens));
 
 		}
 		if (input.isKeyPressed(GLFW_KEY_D)) {
 
-			setPos(math::vec3(m_Pos.x + sensitivity, m_Pos.y, m_Pos.z));
+			setPos(math::vec3(m_Pos.x + keySens, m_Pos.y, m_Pos.z));
 
 		}
 		if (input.isKeyPressed(GLFW_KEY_SPACE)) {
 
-			setPos(math::vec3(m_Pos.x, m_Pos.y + sensitivity, m_Pos.z));
+			setPos(math::vec3(m_Pos.x, m_Pos.y + keySens, m_Pos.z));
 
 		}
 		if (input.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
 
-			setPos(math::vec3(m_Pos.x, m_Pos.y - sensitivity, m_Pos.z));
+			setPos(math::vec3(m_Pos.x, m_Pos.y - keySens, m_Pos.z));
 
 		}
 
 		if (input.isButtonPressed(GLFW_MOUSE_BUTTON_1)) {
-
+			
 			(*window).hideCursor();
+
+			if (m_MouseClicked) {
+				
+				input.getMousePos(m_MouseX, m_MouseY);
+				setPitch((m_MouseY - m_OrigMouseY) * mouseSens);
+				setYaw((m_MouseX - m_OrigMouseX) * mouseSens);
+				return;
+			
+			}
+
+			m_MouseClicked = true;
+			input.getMousePos(m_OrigMouseX, m_OrigMouseY);
 
 		}
 		else {
 
 			(*window).showCursor();
+
+			if (!m_MouseClicked)
+				return;
+
+			m_MouseClicked = false;
 
 		}
 

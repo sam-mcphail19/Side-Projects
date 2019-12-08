@@ -65,8 +65,8 @@ int main() {
 
 		window.clear();
 		
-		float sensitivity = 10 * deltaTime;
-		camera.input(&window, sensitivity);
+		float sensitivity = 15 * deltaTime;
+		camera.input(&window, sensitivity, sensitivity);
 
 		renderer.begin();
 		for (int i = 0; i < cubes.size(); i++) {
@@ -80,8 +80,8 @@ int main() {
 		mat4 viewMat = *camera.createViewMatrix();
 		
 		mat4 modelMat = mat4::translate(vec3(0, 0, 2));
-		modelMat *= mat4::rotate(angle, vec3(0, 1, 0));
-		modelMat *= mat4::rotate(angle, vec3(1, 0, 0));
+		//modelMat *= mat4::rotate(angle, vec3(0, 1, 0));
+		//modelMat *= mat4::rotate(angle, vec3(1, 0, 0));
 
 		shader.setUniformMat4("mvp", projMat * viewMat * modelMat);
 

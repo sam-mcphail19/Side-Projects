@@ -215,6 +215,9 @@
     <None Include="src\graphics\shaders\basic.frag" />
     <None Include="src\graphics\shaders\basic.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -97,4 +97,7 @@
     <None Include="src\graphics\shaders\basic.vert" />
     <None Include="src\graphics\shaders\basic.frag" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
+  </ItemGroup>
 </Project>

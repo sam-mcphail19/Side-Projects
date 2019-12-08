@@ -94,7 +94,7 @@ namespace sam_engine { namespace graphics {
 
 	void Window::hideCursor() {
 	
-		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	
 	}
 
