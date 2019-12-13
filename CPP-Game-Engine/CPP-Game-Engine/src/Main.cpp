@@ -10,7 +10,7 @@
 #include "graphics/forwardRenderer3D.h"
 #include "graphics/batchRenderer3D.h"
 #include "graphics/mesh.h"
-#include "graphics/camera.h"
+#include "graphics/fpsCamera.h"
 
 #include <time.h>
 
@@ -23,7 +23,7 @@ using namespace graphics;
 
 Window window("Game Engine", WIDTH, HEIGHT);
 
-Camera camera = Camera(vec3(0, 0, -5), 0.0f, 0.0f);
+FPSCamera camera = FPSCamera(&window, vec3(0, 0, -10));
 
 int main() {
 
@@ -65,8 +65,7 @@ int main() {
 
 		window.clear();
 		
-		float sensitivity = 15 * deltaTime;
-		camera.input(&window, sensitivity, sensitivity);
+		camera.input(0.05, 0.08);
 
 		renderer.begin();
 		for (int i = 0; i < cubes.size(); i++) {

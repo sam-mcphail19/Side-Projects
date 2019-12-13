@@ -23,6 +23,9 @@ namespace sam_engine { namespace graphics {
 		void update();
 		bool closed();
 		void setBackground(float r, float g, float b);
+		void centerCursor();
+		void centerCursorHorizontally(double y);
+		void setCursorPos(double x, double y);
 		void hideCursor();
 		void showCursor();
 		inline GLFWwindow* getWindow() const { return m_Window; };

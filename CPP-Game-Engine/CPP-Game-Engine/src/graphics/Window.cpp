@@ -92,6 +92,25 @@ namespace sam_engine { namespace graphics {
 	
 	}
 
+	void Window::centerCursor() {
+
+		setCursorPos(m_Width / 2, m_Height / 2);
+
+	}
+
+	void Window::centerCursorHorizontally(double y) {
+
+		setCursorPos(m_Width / 2, y);
+
+	}
+
+	void Window::setCursorPos(double x, double y) {
+	
+		glfwSetCursorPos(m_Window, x, y);
+		m_Input.cursor_pos_callback(m_Window, x, y);
+	
+	}
+
 	void Window::hideCursor() {
 	
 		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);

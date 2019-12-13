@@ -58,13 +58,13 @@
     <ClCompile Include="src\graphics\batchRenderer3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\fpsCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,6 +92,7 @@
     <ClInclude Include="src\graphics\camera.h" />
     <ClInclude Include="src\graphics\Window.h" />
     <ClInclude Include="src\graphics\Input.h" />
+    <ClInclude Include="src\graphics\fpsCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shaders\basic.vert" />
