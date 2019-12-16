@@ -1,2 +1,3 @@
-﻿  fpsCamera.cpp
+﻿  Main.cpp
+C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\CPP-Game-Engine\src\Main.cpp(68,26): warning C4305: 'argument': truncation from 'double' to 'float'
   CPP-Game-Engine.vcxproj -> C:\Users\Sam\Documents\GitHub\Side-Projects\CPP-Game-Engine\bin\x64\Debug\CPP-Game-Engine.exe

@@ -41,9 +41,6 @@ namespace sam_engine { namespace graphics {
 
 	void BatchRenderer3D::begin() {
 
-		glEnable(GL_DEPTH_TEST);
-		glDepthFunc(GL_LESS);
-
 		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 		m_Buffer = (Vertex*) glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 
@@ -92,7 +89,6 @@ namespace sam_engine { namespace graphics {
 		glBindVertexArray(0);
 
 		m_IndexCount = 0;
-
 		delete m_IBO;
 
 	}

@@ -60,7 +60,7 @@ namespace sam_engine { namespace graphics {
 		vertices[6].color = math::vec4(0, 1, 0, 1);
 		vertices[7].color = math::vec4(1, 0, 0, 1);
 
-		GLuint indices[] = {
+		GLuint* indices = new GLuint[36] {
 			0, 1, 2, 2, 3, 0,
 			3, 2, 6, 6, 7, 3,
 			7, 6, 5, 5, 4, 7,
