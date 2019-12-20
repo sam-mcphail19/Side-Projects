@@ -40,6 +40,8 @@ namespace sam_engine { namespace graphics {
 			return false;
 		}
 
+		glfwSwapInterval(0);
+
 		center();
 
 		glfwSetWindowSizeCallback(m_Window, window_resize);
